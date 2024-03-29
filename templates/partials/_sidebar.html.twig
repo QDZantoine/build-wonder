@@ -1,21 +1,22 @@
 <div class="sidebar d-flex flex-column mr-50">
-	<button class="btn btn-primary btn-icon-primary">
-		<i class="fa-solid fa-question mr-5"></i>
+	<a href="{{path('question_form')}}" class="btn btn-primary btn-icon-primary">
+		<i class="fas fa-question mr-5"></i>
 		<span>Poser une Question</span>
-	</button>
+	</a>
 	<ul class="sidebar-nav py-20">
-		<li class="active">
-			<i class="fa-solid fa-house mr-5 "></i>
+		<a href="{{path('app_home')}}"{% if app.request.pathinfo == path('app_home') %}class="active"{% endif %}
+		>
+			<i class="fas fa-house mr-5 "></i>
 			Liste des Questions
-		</li>
+		</a>
 
-		<li>
-			<i class="fa-solid fa-pen mr-5"></i>
-			Mes Questions</li>
+		<a href="#">
+			<i class="fas fa-pen mr-5"></i>
+			Mes Questions</a>
 
-		<li>
-			<i class="fa-solid fa-puzzle-piece mr-5"></i>
-			Mes réponses</li>
+		<a href="#">
+			<i class="fas fa-puzzle-piece mr-5"></i>
+			Mes réponses</a>
 
 	</ul>
 </div>
