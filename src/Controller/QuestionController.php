@@ -14,7 +14,7 @@ class QuestionController extends AbstractController
     public function index(Request $request): Response
     {
         $formQuestion = $this->createForm(QuestionType::class);
-        $formQuestion->handleRequest($this->$request);
+        $formQuestion->handleRequest($request);
         if($formQuestion->isSubmitted() && $formQuestion->isValid()){
             dump($formQuestion->getData());
         }

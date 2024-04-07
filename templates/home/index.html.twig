@@ -4,5 +4,31 @@
 {% endblock %}
 
 {% block body %}
-	
-{% endblock %}
+
+<ul>
+	{% for question in questions %}
+		<li class="block d-flex flex-row mb-10"></li>
+		<div class="d-flex flex-column mr-10">
+			<i class="fa-solid fa-arrow-up"></i>
+			<p>
+				{{question.rating}}</p>
+			<i class="fa-solid fa-arrow-down"></i>
+
+		</div>
+		<div class="flex-fill d-flex flex-column"></div>
+		<div class="mb-20 question-content">
+			<h3 class="mb-20">{{question.title}}</h3>
+			<p class="mb-20">{{question.content}}</p>
+		</div>
+		<div class="d-flex flex-row justify-content-between">
+			<div class="d-flex flex-row align-items-center"></div>
+			<img class=" question-avatar mr-10" src="{{question.author.avatar}}">
+			<p>{{question.author.name}}</p>
+		</div>
+		<div class="d-flex flex-row align-items-center mr-10">
+			<i class="fa-regular fa-comment"></i>
+			<p>{{question.nbrOfResponse}}</p>
+
+		</div>
+	</div>
+</div>{% endfor %}</ul>{% endblock %}
